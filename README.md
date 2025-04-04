@@ -1,50 +1,97 @@
-# Welcome to your Expo app 👋
+# PupBook
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native mobile application built with Expo that displays a collection of dog profiles. Users can view a list of dogs and tap on individual cards to see detailed information about each pet.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Grid layout displaying dog cards
+- Individual detailed profile pages for each dog
+- Type-safe routing using Expo Router
+- Clean, modern UI with card-based design
 
-   ```bash
-   npm install
-   ```
+## Prerequisites
 
-2. Start the app
+- Node.js (v14 or newer)
+- npm or yarn
+- Expo CLI (`npm install -g expo-cli`)
+- iOS Simulator (for Mac users) or Android Studio (for Android development)
+- Expo Go app on your physical device (optional, for testing)
 
-   ```bash
-    npx expo start
-   ```
+## Installation
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+1. Clone the repository:
 ```bash
-npm run reset-project
+git clone <repository-url>
+cd pupBook
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
 
-## Learn more
+3. Start the development server:
+```bash
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. Run the app:
+- Press `i` to open in iOS simulator
+- Press `a` to open in Android emulator
+- Scan the QR code with Expo Go (iOS) or Camera app (Android)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Project Structure
 
-## Join the community
+```
+pupBook/
+├── app/                    # Main application directory
+│   ├── _layout.tsx        # Root layout with navigation configuration
+│   ├── index.tsx          # Entry point (redirects to dogs list)
+│   ├── dogsList.tsx       # Main screen with grid of dog cards
+│   ├── dog/
+│   │   └── [id].tsx      # Dynamic route for individual dog profiles
+│   ├── data/
+│   │   └── dogs.ts       # Dogs data and types
+│   └── hooks/
+│       └── useDogs.ts     # Custom hook for dog data management
+├── package.json
+└── README.md
+```
 
-Join our community of developers creating universal apps.
+## Tech Stack
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- React Native
+- Expo
+- TypeScript
+- Expo Router (for navigation)
+
+## Data Structure
+
+Each dog in the application has the following properties:
+
+```typescript
+interface Dog {
+  id: number;
+  name: string;
+  breed: string[];
+  activityLevel: number;
+  neuteredStatus: boolean;
+}
+```
+
+## Available Scripts
+
+- `npx expo start` - Start the development server
+- `npm run ios` - Start the app in iOS simulator
+- `npm run android` - Start the app in Android emulator
+- `npm run web` - Start the app in web browser
+
+## Notes
+
+- `assets` directory is unused and legacy from `create-expo-app`, however has been left in place to be used for potential future iteration
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
