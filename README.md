@@ -21,7 +21,7 @@ A React Native mobile application built with Expo that displays a collection of 
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone <https://github.com/Sky-VGW/PupBook.git>
 cd pupBook
 ```
 
